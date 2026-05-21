@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acacia Clinics Blog</title>
+  <link rel="stylesheet" href="style.css">
+  
+  <style>
+    .hero {
+  background: linear-gradient(135deg, rgba(29,78,137,0.95), rgba(177, 30, 30, 0.95));
+  color: #ffffff;
+  text-align: center;
+  padding: 80px 10%;
+}
+
+.hero h2 {
+  color: #ffffff;
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  max-width: 760px;
+  margin: 0 auto 26px;
+  color: #e6eef8;
+  font-size: 1.05rem;
+}
+
+.blog-intro {
+  background-color: #f4f7fb;
+  padding: 80px 10%;
+}
+
+.section-header {
+  max-width: 760px;
+  margin: 0 auto 50px;
+  text-align: center;
+}
+
+.section-header p {
+  color: #4a5568;
+  line-height: 1.8;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  gap: 24px;
+  align-items: start;
+  margin-bottom: 30px;
+}
+
+.secondary-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.blog-card {
+  background: #ffffff;
+  border-radius: 24px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 20px 40px rgba(15, 31, 61, 0.08);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.main-card {
+  padding: 36px;
+}
+
+.small-card {
+  min-height: 320px;
+}
+
+.image-placeholder {
+  height: 180px;
+  background: #e8eef7;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: #7b8794;
+  font-size: 2.4rem;
+}
+
+.image-placeholder.large {
+  height: 280px;
+}
+
+.image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: inherit;
+}
+
+.blog-card p {
+  color: #4a5568;
+  line-height: 1.75;
+}
+
+.read-more {
+  color: #c62828;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 1180px) {
+  .blog-grid,
+  .secondary-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 60px 6%;
+  }
+
+  .hero h2 {
+    font-size: 2.2rem;
+  }
+
+  .blog-intro {
+    padding: 60px 6%;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-container">
+    <div class="logo">
+      <div class="logo-image">
+        <img src="images/acaciaclinicslogo.jpg" alt="Acacia Clinics logo">
+      </div>
+      <div class="logo-text">
+        <h1>Acacia Clinics</h1>
+        <p>Excellence Care Always</p>
+      </div>
+    </div>
+
+    <!-- Hamburger button -->
+    <div id="menu-toggle" class="menu-toggle">☰</div>
+
+    <nav id="nav-menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="bookings.html">Booking</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="review.html">Review</a></li>
+        <li><a href="contacts.html">Contacts</a></li>
+      </ul>
+    </nav>
+    <a href="bookings.html" class="bookings-btn">Book an Appointment</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h2>Acacia Blog Channel</h2>
+    <p>Discover health news, tips, and clinic updates presented in a clean, modern layout.</p>
+    <a href="bookings.html" class="bookings-btn">Book Your Appointment</a>
+  </div>
+</section>
+
+<section class="blog-intro">
+  <div class="section-header">
+    <h2>Featured Wellness Stories</h2>
+    <p>Stay informed with the latest updates, expert advice, and healthy living stories from Acacia Clinics.</p>
+  </div>
+
+  <div class="blog-grid">
+    <article class="blog-card side-card">
+      <div class="image-placeholder"><span><img src="images/blog1.jpg" alt="Blog image"></span></div>
+      <h3>Clinic Updates</h3>
+      <p>We’re committed to keeping our patients informed and supported with the latest developments at Acacia Clinics. From introducing new healthcare services and welcoming skilled professionals to announcing seasonal health promotions and vaccine availability, our updates ensure you stay connected to everything that matters for your well-being. Check back regularly for news, opportunities, and important health reminders designed to keep our community thriving.</p>
+      <a href="#" class="read-more">Read More</a>
+    </article>
+
+    <article class="blog-card main-card">
+      <div class="image-placeholder large"><span><img src="images/blog2.jpg" alt="Blog image"></span></div>
+      <h3>Today's Awareness: World Day for Cultural Diversity for Dialogue and Development</h3>
+      <p>Cultural diversity is a driving force of development, not only with respect to economic growth, but also as a means of leading a more fulfilling intellectual, emotional, moral and spiritual life. This is captured in the seven culture conventions, which provide a solid basis for the promotion of cultural diversity.</p>
+      <p>At Acacia Clinics, we recognize that cultural diversity is a cornerstone of growth and compassionate care. By respecting different traditions, languages, and perspectives, we create an inclusive environment where every patient feels valued. Diversity enriches not only our healthcare delivery but also the intellectual, emotional, and spiritual well-being of our community.</p>
+      <a href="#" class="read-more">Read Full Article</a>
+    </article>
+
+    <article class="blog-card side-card">
+      <div class="image-placeholder"><span><img src="images/blog3.jpg" alt="Blog image"></span></div>
+      <h3>Why Is It Important to Take Medication Correctly?</h3>
+      <p>According to the Centers for Disease Control and Preven­tion, medication taken incorrectly causes 125,000 deaths per year in this country. Taking your medication correctly means taking the right dose at the right time. It’s import­ant to follow your doctor’s instructions for taking your medications.</p>
+      <a href="#" class="read-more">Read More</a>
+    </article>
+  </div>
+
+  <div class="blog-grid secondary-grid">
+    <article class="blog-card small-card">
+      <div class="image-placeholder"><span><img src="images/blog4.jpg" alt="Blog image"></span></div>
+      <h3>Healthy Living Tips of the Week</h3>
+      <p>Small steps make a big difference in your health. This week, focus on staying hydrated—carry a water bottle and sip regularly throughout the day. Proper hydration supports energy, concentration, and overall well-being, making it one of the simplest habits to strengthen your lifestyle.</p>
+      <a href="#" class="read-more">Read More</a>
+    </article>
+    <article class="blog-card small-card">
+      <div class="image-placeholder"><span><img src="images/blog5.png" alt="Blog image"></span></div>
+      <h3>Clinic Promotions</h3>
+      <p>Take charge of your health this season with our discounted wellness check-up packages—available for a limited time!</p>
+      <a href="#" class="read-more">Read More</a>
+    </article>
+    <article class="blog-card small-card">
+      <div class="image-placeholder"><span><img src="images/blog6.jpg" alt="Blog image"></span></div>
+      <h3>Wellness Advice</h3>
+      <p>True wellness goes beyond physical health—it’s about balance in mind, body, and spirit. Take time each day to pause, breathe deeply, and reflect, as mindfulness can reduce stress and improve focus. Pair this with nourishing meals, regular movement, and meaningful social connections to create a lifestyle that supports long-term well-being.</p>
+      <a href="#" class="read-more">Read More</a>
+    </article>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="footer-container">
+    <div class="footer-column footer-brand">
+      <div class="footer-logo">
+        <img src="images/acaciaclinicslogo.jpg" alt="Acacia Clinics Logo">
+      </div>
+      <div class="footer-brand-text">
+        <h3>Acacia Clinics</h3>
+        <p>Providing reliable healthcare you can trust.</p>
+      </div>
+    </div>
+    <div class="footer-column">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="bookings.html">Booking</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="review.html">Review</a></li>
+        <li><a href="contacts.html">Contacts</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Contact Us</h3>
+      <p>Address: Plot 82158, Lejara Rd, Broadhurst Industrial</p>
+      <p>Phone: +267 392 6912</p>
+      <p>Email: ac@acaciaclinics.co.bw</p>
+      <div class="social-links">
+        <a href="https://instagram.com" target="_blank" rel="noreferrer">
+          <span class="social-icon">📷</span>
+          Instagram
+        </a>
+        <a href="https://facebook.com" target="_blank" rel="noreferrer">
+          <span class="social-icon">📘</span>
+          Facebook
+        </a>
+        <a href="https://wa.me/2673926912" target="_blank" rel="noreferrer">
+          <span class="social-icon">💬</span>
+          WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Acacia Clinics. All Rights Reserved.</p>
+  </div>
+</footer>
+</body>
+<script src="script.js"></script>
+</html>

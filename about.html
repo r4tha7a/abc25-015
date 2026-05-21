@@ -1,1 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Acacia Clinics</title>
 
+<link rel="stylesheet" href="style.css">
+<style>
+    /* ABOUT */
+.about {
+ text-align: center;
+ background: #f4f7fb;
+}
+
+
+/* PROFILES */
+.profile-grid {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ align-items: center;
+ gap: 60px;
+ padding: 60px 0;
+}
+.profile-image {
+ width: 280px;
+ height: 280px;
+ background: #e2e8f0;
+ margin: auto;
+ transform: perspective(1200px) rotateY(-15deg) rotateX(5deg);
+ box-shadow: 0 30px 60px rgba(29, 78, 137, 0.15);
+ overflow: hidden;
+ border-radius: 24px;
+}
+.profile-image img {
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+ display: block;
+}
+.profile-text {
+ text-align: left;
+}
+.profile-text h3 {
+ font-size: 28px;
+ margin-bottom: 8px;
+}
+.profile {
+ background: #ffffff;
+}
+.profile.alt .profile-grid {
+ grid-template-columns: 1fr 1fr;
+}
+.profile.alt .profile-image {
+ transform: perspective(1200px) rotateY(15deg) rotateX(5deg);
+ order: -1;
+}
+.profile-image {
+ animation: floatInImage 0.9s ease-out both;
+}
+.profile-text {
+ animation: floatInText 0.9s ease-out 0.15s both;
+}
+.profile.alt .profile-image {
+ animation-name: floatInImageRight;
+}
+@keyframes floatInImage {
+ from {
+   opacity: 0;
+   transform: perspective(1200px) rotateY(-15deg) rotateX(5deg) translateX(-80px);
+ }
+ to {
+   opacity: 1;
+   transform: perspective(1200px) rotateY(-15deg) rotateX(5deg) translateX(0);
+ }
+}
+@keyframes floatInImageRight {
+ from {
+   opacity: 0;
+   transform: perspective(1200px) rotateY(15deg) rotateX(5deg) translateX(80px);
+ }
+ to {
+   opacity: 1;
+   transform: perspective(1200px) rotateY(15deg) rotateX(5deg) translateX(0);
+ }
+}
+@keyframes floatInText {
+ from {
+   opacity: 0;
+   transform: translateY(20px);
+ }
+ to {
+   opacity: 1;
+   transform: translateY(0);
+ }
+}
+.profile.alt {
+ background: #f4f7fb;
+}
+.qualification {
+ font-weight: bold;
+ color: #c62828;
+ font-size: 14px;
+ margin-bottom: 16px;
+}
+
+
+/* MISSION & VISION */
+.mission-vision {
+ background: #ffffff;
+ padding: 80px 10%;
+}
+.card-grid {
+ display: grid;
+ grid-template-columns: repeat(2, 1fr);
+ gap: 30px;
+ max-width: 1000px;
+ margin: 0 auto;
+}
+.card {
+ border: none;
+ padding: 40px;
+ text-align: center;
+ background: linear-gradient(135deg, #1d4e89 0%, #102a43 100%);
+ color: #ffffff;
+ border-radius: 12px;
+ box-shadow: 0 20px 50px rgba(29, 78, 137, 0.15);
+ animation: cardPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+.card:nth-child(2) {
+ animation-delay: 0.2s;
+}
+.card h4 {
+ color: #ffffff;
+ font-size: 22px;
+ margin-bottom: 15px;
+}
+.card p {
+ color: #e2e8f0;
+ font-size: 15px;
+ line-height: 1.8;
+}
+@keyframes cardPop {
+ from {
+   opacity: 0;
+   transform: scale(0.85) translateY(30px);
+ }
+ to {
+   opacity: 1;
+   transform: scale(1) translateY(0);
+ }
+}
+
+
+/* COMMUNITY */
+.community {
+ background: linear-gradient(135deg, #1d4e89 0%, #c62828 100%);
+ color: #ffffff;
+ padding: 80px 10%;
+}
+.community h3 {
+ color: #ffffff;
+ font-size: 36px;
+ margin-bottom: 20px;
+ animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+.community-content {
+ background: transparent;
+ padding: 0;
+ max-width: 700px;
+ margin: 0 auto;
+ text-align: center;
+ animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+.community-content p {
+ color: #e2e8f0;
+ font-size: 16px;
+ line-height: 1.8;
+}
+@keyframes fadeInUp {
+ from {
+   opacity: 0;
+   transform: translateY(30px);
+ }
+ to {
+   opacity: 1;
+   transform: translateY(0);
+ }
+}
+
+@media (max-width: 900px) {
+  .profile-grid,
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .profile-image {
+    width: min(100%, 320px);
+    aspect-ratio: 1 / 1;
+    transform: none;
+    margin: 0 auto;
+  }
+
+  .profile-text {
+    text-align: center;
+  }
+
+  .profile.alt .profile-image {
+    order: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .mission-vision,
+  .community,
+  .about {
+    padding: 40px 4%;
+  }
+
+  .card {
+    padding: 28px 18px;
+  }
+
+  .profile-text h3 {
+    font-size: 24px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+
+    <!-- Header -->
+<header>
+<div class="header-container">
+<div class="logo">
+<h1>Acacia Clinics</h1>
+<p>Excellence Care Always</p>
+</div>
+
+<!-- Hamburger button -->
+    <div id="menu-toggle" class="menu-toggle">☰</div>
+
+    <!-- Navigation -->
+<nav id="nav-menu">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="bookings.html">Booking</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a href="review.html">Review</a></li>
+<li><a href="contacts.html">Contacts</a></li>
+</ul>
+</nav>
+    <!-- Nav End -->
+
+<a href="bookings.html" class="bookings-btn">Book an Appointment</a>
+</div>
+</header>
+    <!-- Header End -->
+
+
+
+    <!-- ABOUT US -->
+<section class="section about">
+<div class="container">
+<h2>About Us</h2>
+<p>
+       Acacia Clinics provides convenient access to quality primary healthcare. The team embodies our brand promise “Excellent Care Always”, with warmth and professionalism for every client.
+       <br>Founded in 2012, Acacia Clinics is 100% citizen-owned and managed by Dr. Gaamangwe Tanyala and Dr. Senate R. Tanyala, both passionate medical practitioners. For more than a decade, we have delivered primary healthcare services across Botswana, guided by our ethos of excellence in a clean, hospitable environment.
+       <br>Our flagship clinic is strategically located at Unit 3, Plot 82158, Lejara Road, Broadhurst Industrial, Gaborone, just minutes from the city centre.
+
+</p>
+</div>
+</section>
+
+
+
+    <!-- DOCTOR PROFILE 1 -->
+<section class="section profile">
+<div class="container profile-grid">
+<div class="profile-text">
+<h3>Meet Dr. Gaamangwe Tanyala</h3>
+<p class="qualification">MBChB, UKZN, SA</p>
+<p>
+         Dr. Gaamangwe Tanyala brings years of clinical experience and a
+         patient‑centered approach to every consultation.
+</p>
+</div>
+<div class="profile-image">
+  <img src="images/gt.png" alt="Dr. Gaamangwe Tanyala">
+</div>
+</div>
+</section>
+
+
+    <!-- DOCTOR PROFILE 2 -->
+<section class="section profile alt">
+<div class="container profile-grid">
+<div class="profile-image">
+  <img src="images/srt.png" alt="Dr. Senate R. Tanyala">
+</div>
+<div class="profile-text">
+<h3>Meet Dr. Senate R. Tanyala</h3>
+<p class="qualification">MBChB, UKZN, SA</p>
+<p>
+         Dr. Senate R. Tanyala is committed to holistic care and community
+         wellness with a strong preventive-health focus.
+</p>
+</div>
+</div>
+</section>
+
+
+
+    <!-- MISSION & VISION -->
+<section class="section mission-vision">
+<div class="container card-grid">
+<div class="card">
+<h4>Our Mission</h4>
+<p>
+         To provide accessible, high‑quality healthcare with compassion,
+         dignity, and integrity.
+</p>
+</div>
+
+<div class="card">
+<h4>Our Vision</h4>
+<p>
+         To be a trusted healthcare partner that improves lives and strengthens
+         our community.
+</p>
+</div>
+</div>
+
+</section>
+
+
+
+    <!-- COMMUNITY ENGAGEMENT -->
+<section class="section community">
+<div class="container community-content">
+<h3>Community Engagement</h3>
+<p>
+       Beyond the clinic, we actively participate in health awareness campaigns
+       and outreach programs to promote wellness in our community.
+</p>
+</div>
+</section>
+
+
+
+    <!-- Footer -->
+   <footer id="contact">
+  <div class="footer-container">
+    <div class="footer-column footer-brand">
+      <div class="footer-logo">
+        <img src="images/acaciaclinicslogo.jpg" alt="Acacia Clinics Logo">
+      </div>
+      <div class="footer-brand-text">
+        <h3>Acacia Clinics</h3>
+        <p>Providing reliable healthcare you can trust.</p>
+      </div>
+    </div>
+    <div class="footer-column">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="bookings.html">Booking</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="review.html">Review</a></li>
+        <li><a href="contacts.html">Contacts</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Contact Us</h3>
+      <p>Address: Plot 82158, Lejara Rd, Broadhurst Industrial</p>
+      <p>Phone: +267 392 6912</p>
+      <p>Email: ac@acaciaclinics.co.bw</p>
+      <div class="social-links">
+        <a href="https://instagram.com" target="_blank" rel="noreferrer"><span class="social-icon">📷</span>Instagram</a>
+        <a href="https://facebook.com" target="_blank" rel="noreferrer"><span class="social-icon">📘</span>Facebook</a>
+        <a href="https://wa.me/2673926912" target="_blank" rel="noreferrer"><span class="social-icon">💬</span>WhatsApp</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Acacia Clinics. All Rights Reserved.</p>
+  </div>
+</footer>
+</body>
+<script src="script.js"></script>
+</html>

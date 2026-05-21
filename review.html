@@ -1,1 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acacia Clinics Reviews</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+      .review-hero {
+  min-height: 52vh;
+  background: linear-gradient(135deg, rgba(29,78,137,0.95), rgba(198,40,40,0.92));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+  padding: 80px 10%;
+}
 
+.review-hero .hero-content {
+  max-width: 640px;
+}
+
+.review-hero h2 {
+  font-size: 3.2rem;
+  margin-bottom: 18px;
+}
+
+.review-hero p {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.92);
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+
+.review-form-section {
+  background-color: #f4f7fb;
+  padding: 80px 10%;
+}
+
+.review-panel {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) 1.5fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.review-summary {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 34px;
+  box-shadow: 0 24px 60px rgba(15, 31, 61, 0.08);
+}
+
+.review-summary h3 {
+  margin-bottom: 18px;
+}
+
+.review-summary p {
+  color: #4a5568;
+  line-height: 1.8;
+}
+
+.review-summary ul {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 0;
+  display: grid;
+  gap: 12px;
+}
+
+.review-summary li {
+  position: relative;
+  padding-left: 24px;
+  color: #1d4e89;
+}
+
+.review-summary li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #c62828;
+}
+
+.review-form {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 36px;
+  box-shadow: 0 24px 60px rgba(15, 31, 61, 0.08);
+}
+
+.field-row {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.field-row label {
+  font-weight: 600;
+  color: #102a43;
+}
+
+.field-row input,
+.field-row select,
+.field-row textarea {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 14px;
+  padding: 14px 16px;
+  font-size: 0.98rem;
+  color: #0f1f3d;
+  background: #f8fafc;
+}
+
+.field-row input:focus,
+.field-row select:focus,
+.field-row textarea:focus {
+  outline: none;
+  border-color: #1d4e89;
+  box-shadow: 0 0 0 3px rgba(29,78,137,0.12);
+}
+
+.rating-row {
+  gap: 18px;
+}
+
+.rating-stars {
+  display: flex;
+  gap: 12px;
+}
+
+.rating-stars label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.rating-stars input {
+  display: none;
+}
+
+.rating-stars span {
+  color: #c62828;
+  font-size: 1.25rem;
+}
+
+.rating-stars input:checked + span,
+.rating-stars label:hover span {
+  color: #1d4e89;
+}
+
+.review-form button {
+  margin-top: 10px;
+}
+
+.form-message {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  pointer-events: none;
+  margin-top: 18px;
+  background: rgba(29, 78, 137, 0.08);
+  border: 1px solid rgba(29, 78, 137, 0.2);
+  color: #102a43;
+  border-radius: 16px;
+  padding: 18px 20px;
+  transition: opacity 0.3s ease, max-height 0.4s ease, transform 0.3s ease;
+  transform: translateY(-10px);
+}
+
+.form-message.visible {
+  opacity: 1;
+  max-height: 160px;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+@media (max-width: 980px) {
+  .review-panel {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .review-hero {
+    padding: 60px 6%;
+  }
+
+  .review-hero h2 {
+    font-size: 2.4rem;
+  }
+
+  .review-form-section {
+    padding: 60px 6%;
+  }
+}
+
+@media (max-width: 480px) {
+  .review-hero {
+    padding: 40px 4%;
+  }
+  .review-form-section {
+    padding: 28px 4%;
+  }
+  .review-panel {
+    gap: 18px;
+  }
+  .rating-stars label {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+    </style>
+</head>
+<body>
+
+<header>
+  <div class="header-container">
+    <div class="logo">
+      <div class="logo-image">
+        <img src="images/acaciaclinicslogo.jpg" alt="Acacia Clinics logo">
+      </div>
+      <div class="logo-text">
+        <h1>Acacia Clinics</h1>
+        <p>Excellence Care Always</p>
+      </div>
+    </div>
+
+    <!-- Hamburger button -->
+    <div id="menu-toggle" class="menu-toggle">☰</div>
+
+    <nav id="nav-menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="bookings.html">Booking</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="review.html">Review</a></li>
+        <li><a href="contacts.html">Contacts</a></li>
+      </ul>
+    </nav>
+    <a href="bookings.html" class="bookings-btn">Book an Appointment</a>
+  </div>
+</header>
+
+<section class="review-hero">
+  <div class="hero-content">
+    <h2>Share Your Experience</h2>
+    <p>Your feedback helps Acacia Clinics continue delivering compassionate, high-quality care.</p>
+    <a href="#review-form" class="bookings-btn">Leave a Review</a>
+  </div>
+</section>
+
+<section class="review-form-section" id="review-form">
+  <div class="review-panel">
+    <div class="review-summary">
+      <h3>Tell us how we did</h3>
+      <p>We want to hear about your appointment, staff experience, and overall care.</p>
+      <ul>
+        <li>Easy booking process</li>
+        <li>Friendly medical staff</li>
+        <li>Comfortable clinic environment</li>
+      </ul>
+    </div>
+
+    <form class="review-form">
+      <div class="field-row">
+        <label for="name">Full Name</label>
+        <input id="name" name="name" type="text" placeholder="Jane Doe" required>
+      </div>
+
+      <div class="field-row">
+        <label for="email">Email Address</label>
+        <input id="email" name="email" type="email" placeholder="jane@example.com" required>
+      </div>
+
+      <div class="field-row">
+        <label for="visit-date">Visit Date</label>
+        <input id="visit-date" name="visit-date" type="date" required>
+      </div>
+
+      <div class="field-row">
+        <label for="service">Service Received</label>
+        <select id="service" name="service" required>
+          <option value="">Select a service</option>
+          <option>General Consultation</option>
+          <option>Dental Care</option>
+          <option>Laboratory Testing</option>
+          <option>Physiotherapy</option>
+          <option>Vaccination</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div class="field-row rating-row">
+        <label>Overall Rating</label>
+        <div class="rating-stars">
+          <label><input type="radio" name="rating" value="1" required><span>★</span></label>
+          <label><input type="radio" name="rating" value="2"><span>★</span></label>
+          <label><input type="radio" name="rating" value="3"><span>★</span></label>
+          <label><input type="radio" name="rating" value="4"><span>★</span></label>
+          <label><input type="radio" name="rating" value="5"><span>★</span></label>
+        </div>
+      </div>
+
+      <div class="field-row">
+        <label for="comments">Comments</label>
+        <textarea id="comments" name="comments" rows="6" placeholder="Please tell us what went well and how we can improve."></textarea>
+      </div>
+
+      <button type="submit" class="btn">Submit Review</button>
+      <div class="form-message" id="review-message" role="status" aria-live="polite">
+        Thank you! Your review has been received and will help us improve care at Acacia Clinics.
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="footer-container">
+    <div class="footer-column footer-brand">
+      <div class="footer-logo">
+        <img src="images/acaciaclinicslogo.jpg" alt="Acacia Clinics Logo">
+      </div>
+      <div class="footer-brand-text">
+        <h3>Acacia Clinics</h3>
+        <p>Providing reliable healthcare you can trust.</p>
+      </div>
+    </div>
+    <div class="footer-column">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="bookings.html">Booking</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="review.html">Review</a></li>
+        <li><a href="contacts.html">Contacts</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Contact Us</h3>
+      <p>Address: Plot 82158, Lejara Rd, Broadhurst Industrial</p>
+      <p>Phone: +267 392 6912</p>
+      <p>Email: ac@acaciaclinics.co.bw</p>
+      <div class="social-links">
+        <a href="https://instagram.com" target="_blank" rel="noreferrer"><span class="social-icon">📷</span>Instagram</a>
+        <a href="https://facebook.com" target="_blank" rel="noreferrer"><span class="social-icon">📘</span>Facebook</a>
+        <a href="https://wa.me/2673926912" target="_blank" rel="noreferrer"><span class="social-icon">💬</span>WhatsApp</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Acacia Clinics. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script>
+  const reviewForm = document.querySelector('.review-form');
+  const reviewMessage = document.getElementById('review-message');
+
+  if (reviewForm) {
+    reviewForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      reviewMessage.classList.add('visible');
+      reviewForm.reset();
+      reviewMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  }
+</script>
+</body>
+<script src="script.js"></script>
+</html>
